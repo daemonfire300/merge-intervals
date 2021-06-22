@@ -3,7 +3,9 @@ FROM golang:1.16
 WORKDIR /go/src/app
 COPY . .
 
-RUN go build -mod=vendor -v -o app ./cmd
-RUN mv app /usr/local/bin
+RUN CGO_ENABLED=0 go build -mod=vendor -ldflags '-w -extldflags "-static"' \ 
+    -v -o /usr/local/bin/mergectl ./cmd/mergectl
 
-CMD ["app"]
+RUN rm -rf /go/src/app
+
+ENTRYPOINT ["mergectl"]
