@@ -1,0 +1,4 @@
+run:
+  modules-download-mode: vendor
+  skip-files:
+    - "tools.go"
