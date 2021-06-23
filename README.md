@@ -10,7 +10,7 @@ Learning stuff.
 
 *How did we verify the "correctness" of this algorithm?* Run it through the test suite at LeetCode.
 
-*O-Notation?* Depends on the sorting algorithm used, assuming the sort happens in `n * log(n)` the sorting dominates the time complexity, although there is some in-efficiency by using an inner for-loop.
+*O-Notation?* Depends on the sorting algorithm used, assuming the sort happens in `n * log(n)` the sorting dominates the time complexity, although there is some in-efficiency by using an inner for-loop (which has been removed, an earlier version contained in-efficiencies, changes were made in g#3f52a15).
 
 ## How to use
 
