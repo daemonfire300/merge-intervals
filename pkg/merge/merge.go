@@ -22,20 +22,17 @@ func Merge(intervals [][]int) [][]int {
 		return intervals[i][0] <= intervals[j][0]
 	})
 	res := make([][]int, 0)
-	// This is bootstrap code
-	// In order to make the for-loop run smooth
-	// we need to add the first item to the results otherwise the whole list is off
-	// by one, i.e., the first interval is missing.
-	currentSoFar := intervals[0]
-	res = append(res, currentSoFar)
 	for i := range intervals { // iterate linearly
 		// over the list of intervals
+		if len(res) == 0 {
+			res = append(res, intervals[i])
+		}
+		currentSoFar := res[len(res)-1]
 		if intersects(currentSoFar, intervals[i]) { // if it intersects we create a
 			// "merged" interval containing both (the one so far and the current interval we are looking at)
-			currentSoFar = mergedInterval(currentSoFar, intervals[i])
+			res[len(res)-1] = mergedInterval(currentSoFar, intervals[i])
 		} else { // if not no merge can be performed, just append it and mark it as current
-			currentSoFar = intervals[i]
-			res = append(res, currentSoFar)
+			res = append(res, intervals[i])
 		}
 	}
 	return res
@@ -65,5 +62,5 @@ func mergedInterval(a, b []int) []int {
 // intersects, answers: a fits b?
 func intersects(a, b []int) bool {
 	return ((a[0] >= b[0] && a[0] <= b[1]) || (a[1] >= b[1] && a[1] <= b[0])) ||
-		(a[0] <= b[0] && a[1] >= b[1]) || (a[1] == b[0])
+		(a[0] <= b[0] && a[1] >= b[1]) || (a[1] >= b[0])
 }
