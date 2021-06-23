@@ -19,6 +19,8 @@ Learning stuff.
  1. `docker build -t mergectl`
  2. `cat sample.json | docker run -t mergectl`
 
+There is also a public Docker Hub page for this project https://hub.docker.com/repository/docker/realjulius/merge-intervals.
+
 ### go run
 
 Using stdin:
