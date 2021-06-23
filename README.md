@@ -14,7 +14,7 @@ Learning stuff.
 
 ---
 
-**O-Notation / Time-complexity?** Depends on the sorting algorithm used, assuming the sort happens in `O(n * log(n))` the sorting dominates the time complexity, although there is some in-efficiency by using an inner for-loop (which has been removed, an earlier version contained in-efficiencies, changes were made in g#3f52a15).
+**O-Notation / Time-complexity?** Depends on the sorting algorithm used, assuming the sort happens in `O(n * log(n))` the sorting dominates the time complexity, although there is some in-efficiency by using an inner for-loop (which has been removed, an earlier version contained in-efficiencies, changes were made in  #48b80bb).
 
 ---
 
