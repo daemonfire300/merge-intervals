@@ -10,7 +10,7 @@ Learning stuff.
 
 ---
 
-**How did we verify the "correctness" of this algorithm?** Run it through the test suite at LeetCode.
+**How did we verify the "correctness" of this algorithm?** Run it through the test suite at LeetCode and created some of my own test cases.
 
 ---
 
