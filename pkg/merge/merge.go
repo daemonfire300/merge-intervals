@@ -61,6 +61,5 @@ func mergedInterval(a, b []int) []int {
 
 // intersects, answers: a fits b?
 func intersects(a, b []int) bool {
-	return ((a[0] >= b[0] && a[0] <= b[1]) || (a[1] >= b[1] && a[1] <= b[0])) ||
-		(a[0] <= b[0] && a[1] >= b[1]) || (a[1] >= b[0])
+	return a[1] >= b[0]
 }
